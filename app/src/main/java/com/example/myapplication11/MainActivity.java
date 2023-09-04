@@ -1,6 +1,7 @@
 package com.example.myapplication11;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,16 +14,14 @@ public class MainActivity extends AppCompatActivity {
 
     Button send_button;
     EditText send_text;
-    TextView receiver_msg;
+
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         send_button= findViewById(R.id.send_button_id);
         send_text = findViewById(R.id.send_text_id);
-        receiver_msg = findViewById(R.id.received_value_id);
 
         send_button.setOnClickListener(this::onClick);
 
@@ -35,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void onClick(View view) {
         String str = send_text.getText().toString();
-        receiver_msg.setText(" Hello " + str);
+
+        Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+        intent.putExtra("message_key", str);
+        startActivity(intent);
+
     }
 }
