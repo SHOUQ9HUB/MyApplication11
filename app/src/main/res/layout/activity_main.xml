@@ -28,4 +28,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/received_value_id"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="70dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
